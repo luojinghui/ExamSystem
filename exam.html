@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>exam_test</title>
+</head>
+<body>
+    <div>西安软件服务外包学院</div>
+    <hr/>
+
+    <form action="eacm.html" method="post">
+
+    <div><h1>统一建模语言理论测试</h1></div>
+    考试科目：<input type="text" value="统一建模语言UML" >&nbsp;&nbsp;&nbsp;&nbsp;
+    时间：<input type="text" value="100分钟" >&nbsp;&nbsp;&nbsp;&nbsp;
+    得分：<input type="text" id="sub_score" >&nbsp;&nbsp;&nbsp;&nbsp;
+    <br>
+
+    班&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;级：<input type="text" required="required">&nbsp;&nbsp;&nbsp;&nbsp;
+    学号：<input type="number" required="required">&nbsp;&nbsp;&nbsp;&nbsp;
+    姓名：<input type="text" required="required">&nbsp;&nbsp;&nbsp;&nbsp;
+    <br><br>
+
+    <div><b>一、   填空题</b></div>
+    <span>1.UML的中文全称是：</span>    <input type="text" id="umlzhongwen" >
+    <br>
+    <span>2.对象最突出的特征是：</span>    <input type="text" id="objtezheng" >
+    <br><br>
+
+    <div><b>二、   选择题</b></div>
+    <span>1.UML与软件工程的关系是：</span>
+    <select name="select" id="danxuan1">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br>
+    &nbsp;&nbsp;&nbsp;<span>(A):UML就是软件工程；</span><br>
+    &nbsp;&nbsp;&nbsp;<span>(B):UML参与到软件工程中软件开发过程的几个阶段；</span><br>
+    &nbsp;&nbsp;&nbsp;<span>(C):UML与软件工程无关；</span><br>
+    &nbsp;&nbsp;&nbsp;<span>(D):UML是软件工程的一部分；</span><br><br>
+
+    <span>2.java语言支持：</span>
+    <select name="select" id="danxuan2">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+    <br>
+    &nbsp;&nbsp;&nbsp;<span>(A):单继承；</span><br>
+    &nbsp;&nbsp;&nbsp;<span>(B):多继承；</span><br>
+    &nbsp;&nbsp;&nbsp;<span>(C):单继承与多继承都支持；</span><br>
+    &nbsp;&nbsp;&nbsp;<span>(D):单线程和多线程都不支持；</span><br><br>
+
+    <div><b>三、   多选题</b></div>
+        <span>1.用例的粒度分为以下那三种：</span><br>
+        &nbsp;&nbsp;&nbsp;<input id="checkbox1" type="checkbox" class="check_box1">(A):概述级；<br>
+        &nbsp;&nbsp;&nbsp;<input id="checkbox2" type="checkbox" class="check_box1">(B):需求级；<br>
+        &nbsp;&nbsp;&nbsp;<input id="checkbox3" type="checkbox" class="check_box1">(C):用户目标级；<br>
+        &nbsp;&nbsp;&nbsp;<input id="checkbox4" type="checkbox" class="check_box1">(D):子功能级；<br><br>
+
+        <span>2.类图由那三部分组成：</span><br>
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="A" class="check_box2">(A):名称（name）；<br>
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="B" class="check_box2">(B):属性（Attribute）；<br>
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="C" class="check_box2">(C):操作（Operation）；<br>
+        &nbsp;&nbsp;&nbsp;<input type="checkbox" name="D" class="check_box2">(D):方法（function）；<br><br>
+
+    <div><b>四、   判断题</b></div>
+        &nbsp;&nbsp;&nbsp;<span>1.用例图只是用于和用户交流和沟通的，用户确定需求；</span>
+        <input type="radio" name="yongli" value="true" />对
+        <input type="radio" name="yongli" value="false" />错
+        <br>
+        &nbsp;&nbsp;&nbsp;<span>2.在状态图中，终止状态在一个状态图中允许有任意多个；</span>
+        <input type="radio" name="zhuangtai" value="true" />对
+        <input type="radio" name="zhuangtai" value="false" />错
+        <br><br>
+
+    <div><b>五、   简答题</b></div>
+    &nbsp;&nbsp;&nbsp;<span>1.什么是模型，以及模型的表现形式；</span><br>
+    &nbsp;&nbsp;&nbsp;<textArea rows="4" cols="50" name="textArea">在这里填写答案，字数不限制</textArea>
+    <br><br>
+
+
+    <!-- <script>document.body.innerText = score()</script> -->
+    <input id="submit" type="submit" name="submit" value="提交">
+    <input type="reset" name="reset" value="重置">
+    </form>
+</body>
+<script src="./score.js"></script>
+</html>
