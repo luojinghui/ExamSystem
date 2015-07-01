@@ -1,6 +1,6 @@
 document.querySelector("#submit").addEventListener("click",function(event) {
-
-    document.getElementById("sub_score").value = score();
+    var score = 0;
+    document.getElementById("sub_score").value = score(score);
     event.preventDefault();
 })
 
@@ -32,8 +32,8 @@ function radio(name) {
     }
 }
 
-function score() {
-    var score = 0;
+function score(score) {
+
 
     document.getElementById("umlzhongwen").value === "统一建模语言" ? score += 1 : 0;
     document.getElementById("objtezheng").value === "封装性，继承性，多态性" ? score += 1 : 0;
