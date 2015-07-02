@@ -1,48 +1,62 @@
+
 document.querySelector("#submit").addEventListener("click",function(event) {
-    var score = 0;
-    document.getElementById("sub_score").value = score(score);
     event.preventDefault();
+    judgeInfo("banji","xuehao","xingming");
+    document.getElementById("sub_score").value = sub_score();
 })
 
-function checkbox(classname) {
-    var options = document.getElementsByClassName(classname);
-    var answer = "";
+function sub_score() {
+    var form = new FormValueGetter();
+    var score = 0;
 
-    for (var i = 0; i < options.length; i++) {
-        if(options[i].checked === true){
-            i === 0 ? answer+="A" : 0;
-            i === 1 ? answer+="B" : 0;
-            i === 2 ? answer+="C" : 0;
-            i === 3 ? answer+="D" : 0;
-        }
-    }
-    return answer;
+    form.GetValues("form");
+    var NamesAndValues = form.NamesAndValues;
+
+    NamesAndValues.forEach(function(val) {
+        score += calculate(val.name,val.value);
+    })
+    return score;
 }
 
-function radio(name) {
-    var options = document.getElementsByName(name);
+function calculate(valName,valValue) {
+    var answer = Answer();
+    var getSubScore = 0;
 
-    for (var i = 0; i < options.length; i++) {
-        if(options[i].checked === true){
-            return true;
+    answer.forEach(function(val) {
+        if(val.name === valName && judgeValue(val,valName,valValue)) {
+            getSubScore = val.score;
         }
-    if(options[i].checked === false){
+    })
+    return getSubScore;
+}
+// val.value.toString() === valValue.toString()
+
+function judgeValue(val,valName,valValue) {
+    var answer = Answer();
+    var array = [];
+
+        if(val.value.length === valValue.length) {
+            _.forEach(val.value,function(n) {
+                _.forEach(valValue,function(m) {
+                    if(n === m) {
+                        array.push(n);
+                    }
+                });
+            });
+        }
+        if(val.value.length === array.length) {
+            return true;
+        } else {
             return false;
         }
-    }
 }
 
-function score(score) {
-
-
-    document.getElementById("umlzhongwen").value === "统一建模语言" ? score += 1 : 0;
-    document.getElementById("objtezheng").value === "封装性，继承性，多态性" ? score += 1 : 0;
-    document.getElementById("danxuan1").value === "B" ? score += 2 : 0;
-    document.getElementById("danxuan2").value === "A" ? score += 2 : 0;
-    checkbox("check_box1") === "ABD" ? score += 2 : 0;
-    checkbox("check_box2") === "ABC" ? score += 2 : 0;
-    radio("yongli") === false ? score += 2 : 0;
-    radio("zhuangtai") === true ? score += 2 : 0;
-    document.getElementsByName("textArea")[0].value === "模型是对现实世界的简化和抽象，模型是对所研究的系统、过程、事物或概念的一种表达形式，可以是物理实体；可以是某种图形，或者是一种数学表达式。" ? score += 5 : 0;
-    return score;
+function judgeInfo(banji,xuehao,xingming) {
+    if(document.getElementById(banji).value === "") {
+        alert("班级不能为空");
+    } else if(document.getElementById(xuehao).value === "") {
+        alert("学号不能为空");
+    } else if(document.getElementById(xingming).value === "") {
+        alert("姓名不能为空");
+    }
 }
