@@ -62,7 +62,7 @@ FormValueGetter.prototype.GetValues = function(form) {
         var array = [];
 
         [].forEach.call(document.getElementsByName(name),function(val) {
-                array.push(val.value);
+            array.push(val.value);
         });
         return array;
     }

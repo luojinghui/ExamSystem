@@ -1,5 +1,6 @@
 
 document.querySelector("#submit").addEventListener("click",function(event) {
+    window.scroll(0,0);
     event.preventDefault();
     judgeInfo("banji","xuehao","xingming");
     document.getElementById("sub_score").value = sub_score();
