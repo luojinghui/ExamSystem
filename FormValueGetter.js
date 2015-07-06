@@ -1,4 +1,3 @@
-
 function FormValueGetter() {
     this.NamesAndValues = [];
 }
